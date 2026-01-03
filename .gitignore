@@ -1,0 +1,53 @@
+# Medical Text Summarization Project Structure
+
+src/
+├── models/           # Model definitions and architectures
+├── data/            # Data loading, preprocessing, and augmentation
+├── training/        # Training loops and optimization
+├── evaluation/      # Metrics and evaluation utilities
+├── utils/           # General utilities and helpers
+├── config/          # Configuration management
+└── demo/            # Demo and visualization components
+
+configs/             # YAML configuration files
+data/               # Raw and processed datasets
+scripts/            # Training and evaluation scripts
+notebooks/          # Jupyter notebooks for exploration
+tests/              # Unit and integration tests
+assets/             # Generated artifacts and visualizations
+demo/               # Streamlit/Gradio demo applications
+
+# Generated files
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+
+# Data and models
+data/raw/
+data/processed/
+models/checkpoints/
+models/pretrained/
+*.pkl
+*.joblib
+
+# Logs and outputs
+logs/
+outputs/
+wandb/
+mlruns/
+tensorboard/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/

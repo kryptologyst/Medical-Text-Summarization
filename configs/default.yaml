@@ -1,0 +1,54 @@
+"""
+Default configuration for medical text summarization.
+"""
+
+# Default configuration
+default_config = {
+    "project": {
+        "name": "medical_text_summarization",
+        "version": "1.0.0",
+        "description": "Medical text summarization using transformer models"
+    },
+    "data": {
+        "max_input_length": 512,
+        "max_output_length": 128,
+        "train_split": 0.8,
+        "val_split": 0.1,
+        "test_split": 0.1,
+        "batch_size": 8,
+        "num_workers": 4,
+        "deidentify": False
+    },
+    "model": {
+        "name": "t5-small",
+        "pretrained": True,
+        "dropout": 0.1,
+        "attention_dropout": 0.1,
+        "activation_dropout": 0.1
+    },
+    "training": {
+        "epochs": 10,
+        "learning_rate": 5e-4,
+        "weight_decay": 0.01,
+        "warmup_steps": 100,
+        "gradient_accumulation_steps": 1,
+        "max_grad_norm": 1.0,
+        "save_steps": 500,
+        "eval_steps": 500,
+        "logging_steps": 100
+    },
+    "evaluation": {
+        "metrics": ["rouge", "bertscore", "bleu"],
+        "rouge_types": ["rouge1", "rouge2", "rougeL"],
+        "bertscore_model": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"
+    },
+    "paths": {
+        "data_dir": "data",
+        "output_dir": "outputs",
+        "model_dir": "models",
+        "log_dir": "logs"
+    },
+    "device": "auto",
+    "seed": 42,
+    "debug": False
+}
